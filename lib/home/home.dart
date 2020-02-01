@@ -1,8 +1,8 @@
 
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/heavy_rotation.dart';
-import 'package:spotify_clone/new_releases.dart';
-import 'package:spotify_clone/recently_played.dart';
+import 'package:spotify_clone/home/heavy_rotation.dart';
+import 'package:spotify_clone/home/recently_played.dart';
+import 'package:spotify_clone/home/new_releases.dart';
 
 class HomePage extends StatelessWidget {
 
@@ -12,11 +12,14 @@ class HomePage extends StatelessWidget {
       padding: EdgeInsets.only(left: 15, top: 15),
       children: <Widget>[
         Container(
-          padding: EdgeInsets.only(right: 15),
+          padding: EdgeInsets.only(right: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
-              Icon(Icons.settings, color: Colors.white)
+              IconButton(
+                icon: Icon(Icons.settings, color: Colors.white),
+                onPressed: () {},
+              )
             ],
           ),
         ),

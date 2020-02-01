@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/home.dart';
+import 'package:spotify_clone/home/home.dart';
+import 'package:spotify_clone/search/search.dart';
 
 class AppPage extends StatefulWidget {
   @override
@@ -11,9 +12,7 @@ class _AppPageState extends State<AppPage> {
 
   List<Widget> _widgetOptions = <Widget>[
     HomePage(),
-    Text(
-      'Index 1: Business',
-    ),
+    SearchPage(),
     Text(
       'Index 2: School',
     ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/album.dart';
+import 'package:spotify_clone/home/album.dart';
 
 class NewReleases extends StatelessWidget {
   @override
