@@ -8,40 +8,57 @@ class SearchPage extends StatelessWidget {
       child: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
-            backgroundColor: Colors.transparent,
+            backgroundColor: Colors.black,
+            floating: false,
             pinned: true,
             expandedHeight: 220,
             centerTitle: true,
-            title: Text(
-              'Search',
-              style: TextStyle(fontSize: 40),
-            ),
-            bottom: PreferredSize(
-              preferredSize: Size.fromHeight(0),
-              child: TextField(
-                autofocus: false,
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: Colors.white,
-                  labelText: "Artirts, songs, or podcasts",
-                  prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(5))
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colors.white),
-                    borderRadius: BorderRadius.circular(5),
-                  )
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [ Colors.white12, Colors.black ]
                 ),
               ),
             ),
+            bottom: PreferredSize(
+              preferredSize: Size.fromHeight(80),
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    'Search',
+                    style: TextStyle(fontSize: 50, color: Colors.white),
+                  ),
+                  SizedBox(height: 20),
+                  TextField(
+                    autofocus: false,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Colors.white,
+                      labelText: "Artirts, songs, or podcasts",
+                      labelStyle: TextStyle(fontSize: 20, color: Colors.black),
+                      prefixIcon: Icon(Icons.search, color: Colors.black),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(5))
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(5),
+                      )
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
+          SliverPadding(padding: EdgeInsets.only(top: 20)),
           SliverGrid(
             gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 200.0,
-              mainAxisSpacing: 10.0,
-              crossAxisSpacing: 10.0,
-              childAspectRatio: 4.0,
+              maxCrossAxisExtent: 200,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              childAspectRatio: 2,
             ),
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
