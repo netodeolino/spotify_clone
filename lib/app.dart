@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:spotify_clone/home/home.dart';
+import 'package:spotify_clone/library/library.dart';
 import 'package:spotify_clone/search/search.dart';
 
 class AppPage extends StatefulWidget {
@@ -13,9 +14,7 @@ class _AppPageState extends State<AppPage> {
   List<Widget> _widgetOptions = <Widget>[
     HomePage(),
     SearchPage(),
-    Text(
-      'Index 2: School',
-    ),
+    LibraryPage()
   ];
 
   void _onItemTapped(int index) {
